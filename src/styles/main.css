@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Punto de entrada de estilos (Vite los empaqueta en un único CSS minificado)
+   ========================================================================== */
+
+/* Fuentes alojadas en el propio sitio (sin Google Fonts → más rápido y RGPD) */
+@import '@fontsource/bebas-neue/latin-400.css';
+@import '@fontsource-variable/inter/wght.css';
+
+@import './tokens.css';
+@import './base.css';
+@import './components.css';
+
+/* Secciones */
+@import './sections/header.css';
+@import './sections/hero.css';
+@import './sections/schedule.css';

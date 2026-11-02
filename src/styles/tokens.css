@@ -1,0 +1,79 @@
+/* ==========================================================================
+   TOKENS — colores, tipografía, espaciado, movimiento
+   Cambia aquí la identidad visual de toda la web.
+   ========================================================================== */
+:root {
+  /* --- Color (paleta del cartel) --- */
+  --c-black: #0b0b0b;        /* fondo principal */
+  --c-carbon: #161616;       /* fondos alternos, tarjetas */
+  --c-carbon-2: #1e1e1e;     /* hover / superficies elevadas */
+  --c-red: #b3121b;          /* acento: CTAs, bandas, bloque horario */
+  --c-red-hover: #cf1a24;
+  --c-red-text: #ff5a5f;     /* rojo para texto pequeño sobre negro (contraste AA) */
+  --c-paper: #f2f0eb;        /* texto principal (blanco roto) */
+  --c-grey: #8a8a8a;         /* texto secundario */
+  --c-line: rgb(242 240 235 / 0.85); /* borde fino de filas */
+  --c-line-soft: rgb(242 240 235 / 0.14);
+
+  /* --- Tipografía --- */
+  --f-display: 'Bebas Neue', 'Oswald', Impact, 'Arial Narrow', sans-serif;
+  --f-body: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Escala fluida (móvil → escritorio) */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --fs-lg: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --fs-xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+  --fs-2xl: clamp(2.75rem, 2rem + 4vw, 5rem);
+  --fs-hero: clamp(4rem, 2.2rem + 9vw, 10.5rem);
+  --fs-poster: clamp(4.5rem, 2.5rem + 10vw, 11rem);
+
+  --lh-tight: 0.9;
+  --lh-body: 1.6;
+  --tracking-display: 0.02em;
+  --tracking-eyebrow: 0.28em;
+
+  /* --- Espaciado (escala de 4 px) --- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+  --section-y: clamp(4.5rem, 3rem + 6vw, 8rem);
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --container: 80rem; /* 1280 px */
+
+  /* --- Formas --- */
+  --radius: 2px;      /* casi recto: estética de cartel */
+  --border: 1px solid var(--c-line);
+  --header-h: 4.5rem;
+
+  /* --- Movimiento --- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 200ms;
+  --dur: 450ms;
+  --dur-slow: 900ms;
+
+  /* --- Capas --- */
+  --z-header: 50;
+  --z-menu: 60;
+
+  /* --- Texturas (SVG noise inline, sin peticiones) --- */
+  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* Desgaste ligero para el H1 del hero */
+  --wear-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.35' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 -2.4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E");
+  /* Desgaste marcado para la cinta roja (tinta gastada) */
+  --wear: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 0 -2.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E");
+}
+
+@media (min-width: 64em) {
+  :root {
+    --header-h: 5.5rem;
+  }
+}

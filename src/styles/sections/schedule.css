@@ -1,0 +1,158 @@
+/* ==========================================================================
+   HORARIOS — estilo cartel de velada
+   ========================================================================== */
+.schedule {
+  background: var(--c-black);
+}
+
+.schedule__head {
+  display: grid;
+  justify-items: center;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-8);
+  text-align: center;
+}
+
+.schedule__heading {
+  /* sombra sutil de tinta, como el cartel impreso */
+  text-shadow: 0 0.04em 0 rgb(0 0 0 / 0.6);
+}
+
+.schedule__head .ribbon {
+  margin-top: calc(var(--sp-2) * -1);
+}
+
+.schedule__grid {
+  display: grid;
+  gap: var(--sp-8);
+  max-width: 64rem;
+  margin-inline: auto;
+}
+
+/* Título de bloque: MAÑANA / TARDE con subrayado rojo */
+.schedule__title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--sp-5);
+  padding-bottom: var(--sp-2);
+  font-size: var(--fs-xl);
+  letter-spacing: 0.08em;
+}
+
+.schedule__title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--c-red);
+}
+
+.schedule__list {
+  display: grid;
+  gap: var(--sp-3);
+}
+
+/* Fila: [hora en rojo] [icono] [nombre de clase] con borde fino blanco */
+.slot {
+  display: grid;
+  grid-template-columns: 7.5rem 2.75rem 1fr;
+  align-items: stretch;
+  min-height: 3.5rem;
+  border: var(--border);
+  background: rgb(22 22 22 / 0.6);
+  transition:
+    background-color var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out);
+}
+
+.slot:hover {
+  background: var(--c-carbon-2);
+}
+
+.slot__time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
+  background: var(--c-red);
+  font-family: var(--f-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.slot__icon {
+  display: grid;
+  place-items: center;
+  border-right: 1px solid var(--c-line-soft);
+  color: var(--c-paper);
+}
+
+.slot__icon .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.slot__name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--sp-2) var(--sp-4);
+  font-family: var(--f-display);
+  font-size: 1.45rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.slot__note {
+  margin-top: 0.3rem;
+  font-family: var(--f-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--c-red-text);
+}
+
+.schedule__footnote {
+  margin-top: var(--sp-8);
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--c-grey);
+}
+
+/* Móvil muy estrecho: hora más compacta */
+@media (max-width: 22.5em) {
+  .slot {
+    grid-template-columns: 6.25rem 2.25rem 1fr;
+  }
+
+  .slot__time {
+    font-size: 1.1rem;
+  }
+
+  .slot__name {
+    font-size: 1.2rem;
+    padding-inline: var(--sp-3);
+  }
+}
+
+/* Escritorio: MAÑANA y TARDE en dos columnas */
+@media (min-width: 56em) {
+  .schedule__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-7);
+  }
+
+  .slot {
+    grid-template-columns: 8.5rem 3.25rem 1fr;
+    min-height: 3.75rem;
+  }
+
+  .slot__time {
+    font-size: 1.45rem;
+  }
+}

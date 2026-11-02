@@ -1,0 +1,221 @@
+/* ==========================================================================
+   HEADER — transparente sobre el hero, negro sólido al hacer scroll
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: var(--z-header);
+  height: var(--header-h);
+  transition:
+    background-color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out);
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.is-solid,
+.site-header.is-open {
+  background: rgb(11 11 11 / 0.96);
+  border-bottom-color: var(--c-line-soft);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .site-header.is-solid {
+    background: rgb(11 11 11 / 0.85);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.site-header__inner {
+  position: relative;
+  z-index: calc(var(--z-menu) + 1); /* logo y botón siempre sobre el menú móvil */
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+  height: 100%;
+}
+
+/* --- Logo --- */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-right: auto;
+  color: var(--c-paper);
+}
+
+.shield {
+  width: 2.25rem;
+  height: auto;
+  flex: none;
+}
+
+.logo__text {
+  display: grid;
+  line-height: 1;
+  font-family: var(--f-display);
+  text-transform: uppercase;
+}
+
+.logo__prefix {
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  color: var(--c-grey);
+}
+
+.logo__name {
+  font-size: 1.75rem;
+  letter-spacing: 0.08em;
+}
+
+/* --- Navegación escritorio --- */
+.nav,
+.site-header__cta {
+  display: none;
+}
+
+.nav__list {
+  display: flex;
+  gap: var(--sp-6);
+}
+
+.nav__link {
+  position: relative;
+  padding-block: var(--sp-2);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--c-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.nav__link:hover::after,
+.nav__link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* --- Botón hamburguesa --- */
+.menu-toggle {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: calc(var(--sp-2) * -1);
+}
+
+.menu-toggle__bars {
+  display: grid;
+  gap: 7px;
+  width: 1.6rem;
+}
+
+.menu-toggle__bars span {
+  display: block;
+  height: 2px;
+  background: var(--c-paper);
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.menu-toggle[aria-expanded='true'] .menu-toggle__bars span:first-child {
+  transform: translateY(4.5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded='true'] .menu-toggle__bars span:last-child {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+/* --- Menú móvil a pantalla completa --- */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-menu);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--header-h) + var(--sp-7)) var(--gutter) var(--sp-7);
+  background: var(--c-black);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease-out);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+}
+
+.mobile-menu__list {
+  display: grid;
+  gap: var(--sp-2);
+}
+
+.mobile-menu__link {
+  display: block;
+  font-family: var(--f-display);
+  font-size: clamp(3rem, 14vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.mobile-menu__list li {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out);
+  transition-delay: calc(80ms + var(--i) * 60ms);
+}
+
+.mobile-menu.is-open li {
+  opacity: 1;
+  transform: none;
+}
+
+.mobile-menu__link:hover,
+.mobile-menu__link:focus-visible {
+  color: var(--c-red-text);
+}
+
+.mobile-menu__footer {
+  display: grid;
+  gap: var(--sp-5);
+}
+
+.mobile-menu__meta {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--c-grey);
+}
+
+/* --- Escritorio --- */
+@media (min-width: 64em) {
+  .nav,
+  .site-header__cta {
+    display: block;
+  }
+
+  .site-header__cta {
+    display: inline-flex;
+  }
+
+  .menu-toggle,
+  .mobile-menu {
+    display: none;
+  }
+
+  .shield {
+    width: 2.6rem;
+  }
+}
