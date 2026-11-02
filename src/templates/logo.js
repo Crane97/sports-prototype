@@ -17,8 +17,8 @@ export const shield = (className = '') => `
 </svg>`;
 
 /** Logotipo completo (escudo + texto), enlazado al inicio. */
-export const logo = (brand) => `
-<a class="logo" href="#inicio">
+export const logo = (brand, href = '#inicio') => `
+<a class="logo" href="${href}">
   ${shield()}
   <span class="logo__text">
     <span class="logo__prefix">${esc(brand.prefix)}</span>
