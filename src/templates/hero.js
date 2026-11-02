@@ -28,6 +28,6 @@ export function renderHero(site) {
   </div>
 
   <p class="hero__est" aria-hidden="true">Est. ${esc(brand.founded)}</p>
-  <a class="hero__scroll" href="#horarios" aria-label="Bajar a horarios">${icon('arrowDown')}</a>
+  <a class="hero__scroll" href="#cifras" aria-label="Bajar al contenido">${icon('arrowDown')}</a>
 </section>`;
 }

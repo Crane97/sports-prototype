@@ -13,4 +13,7 @@
 /* Secciones */
 @import './sections/header.css';
 @import './sections/hero.css';
+@import './sections/stats.css';
+@import './sections/gallery.css';
+@import './sections/classes.css';
 @import './sections/schedule.css';

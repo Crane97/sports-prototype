@@ -48,6 +48,16 @@ export function image({ file, width, height, alt, className = '', priority = fal
     alt="${esc(alt)}" ${loading} decoding="async" sizes="${sizes}">`;
 }
 
+/**
+ * Cabecera de sección reutilizable: eyebrow + titular + entradilla opcional.
+ */
+export const sectionHead = ({ id, eyebrow, title, intro, className = '' }) => `
+  <header class="section-head ${className}" data-reveal>
+    ${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ''}
+    <h2 class="section-head__title" id="${id}">${title}</h2>
+    ${intro ? `<p class="section-head__intro">${esc(intro)}</p>` : ''}
+  </header>`;
+
 /** Fila de 6 estrellas (separador del cartel). */
 export const stars = (count = 6, className = '') =>
   `<div class="stars ${className}" aria-hidden="true">${icon('star').repeat(count)}</div>`;

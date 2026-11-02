@@ -1,0 +1,159 @@
+/* ==========================================================================
+   CLASES — tarjetas grandes con foto
+   ========================================================================== */
+.classes {
+  background: var(--c-carbon);
+}
+
+.classes__grid {
+  display: grid;
+  gap: var(--sp-5);
+}
+
+.class-card {
+  position: relative;
+  display: grid;
+  min-height: 34rem;
+  overflow: hidden;
+  border: 1px solid var(--c-line-soft);
+  background: var(--c-black);
+  isolation: isolate;
+  transition: border-color var(--dur) var(--ease-out);
+}
+
+/* Borde rojo en hover y cuando se navega con teclado dentro de la tarjeta */
+.class-card:hover,
+.class-card:focus-within {
+  border-color: var(--c-red);
+}
+
+/* Foto a sangre + velo inferior para el texto */
+.class-card__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.class-card__media .media {
+  height: 100%;
+  aspect-ratio: auto !important;
+  transition: transform 1.2s var(--ease-out);
+}
+
+.class-card__media .media--placeholder {
+  place-items: start end;
+  padding: var(--sp-4);
+}
+
+.class-card:hover .media,
+.class-card:focus-within .media {
+  transform: scale(1.06);
+}
+
+.class-card__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(11 11 11 / 0.1) 20%, rgb(11 11 11 / 0.75) 55%, rgb(11 11 11 / 0.96) 100%);
+}
+
+.class-card__body {
+  display: grid;
+  align-content: end;
+  justify-items: start;
+  gap: var(--sp-3);
+  padding: var(--sp-6) var(--sp-5);
+}
+
+/* Número grande arriba a la izquierda */
+.class-card__num {
+  position: absolute;
+  top: var(--sp-5);
+  left: var(--sp-5);
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  color: var(--c-paper);
+}
+
+.class-card__num::after {
+  content: '';
+  display: inline-block;
+  width: 1.75rem;
+  height: 2px;
+  margin-left: var(--sp-3);
+  vertical-align: middle;
+  background: var(--c-red);
+}
+
+.class-card__icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: var(--sp-2);
+  border: 1px solid var(--c-line);
+  border-radius: 50%;
+}
+
+.class-card__meta {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-red-text);
+}
+
+.class-card__title {
+  font-size: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+}
+
+.class-card__text {
+  max-width: 30rem;
+  color: rgb(242 240 235 / 0.8);
+}
+
+.class-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+  padding-bottom: var(--sp-1);
+  border-bottom: 2px solid var(--c-red);
+  font-family: var(--f-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.class-card__link .icon {
+  width: 1.1em;
+  height: 1.1em;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.class-card__link:hover .icon,
+.class-card__link:focus-visible .icon {
+  transform: translateX(4px);
+}
+
+/* Escritorio: rejilla 2×2 */
+@media (min-width: 56em) {
+  .classes__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-6);
+  }
+
+  .class-card {
+    min-height: 40rem;
+  }
+
+  .class-card__body {
+    padding: var(--sp-7);
+  }
+
+  .class-card__num {
+    top: var(--sp-6);
+    left: var(--sp-7);
+  }
+}

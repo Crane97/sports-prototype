@@ -12,11 +12,17 @@ import { renderHead } from './src/templates/head.js';
 import { renderHeader } from './src/templates/header.js';
 import { renderHero } from './src/templates/hero.js';
 import { renderSchedule } from './src/templates/schedule.js';
+import { renderStats } from './src/templates/stats.js';
+import { renderGallery } from './src/templates/gallery.js';
+import { renderClasses } from './src/templates/classes.js';
 
 const sections = {
   head: renderHead,
   header: renderHeader,
   hero: renderHero,
+  stats: renderStats,
+  gallery: renderGallery,
+  classes: renderClasses,
   schedule: renderSchedule,
 };
 

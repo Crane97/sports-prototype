@@ -30,4 +30,4 @@ src/js/          → interacción: header, menú móvil, animaciones
 public/          → favicon, robots.txt, imágenes
 ```
 
-> Estado: header, hero y horarios listos. Resto de secciones y despliegue: en curso.
+> Estado: header, hero, cifras, galería, clases y horarios listos. Pendiente: instalaciones, testimonios, CTA final, footer y despliegue.

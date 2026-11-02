@@ -9,7 +9,8 @@
   --c-carbon-2: #1e1e1e;     /* hover / superficies elevadas */
   --c-red: #b3121b;          /* acento: CTAs, bandas, bloque horario */
   --c-red-hover: #cf1a24;
-  --c-red-text: #ff5a5f;     /* rojo para texto pequeño sobre negro (contraste AA) */
+  --c-red-display: #e2232c;  /* rojo para TEXTO GRANDE (titulares, cifras): ≥3:1 AA */
+  --c-red-text: #ff5a5f;     /* rojo para texto pequeño (≥4.5:1 AA sobre negro y carbón) */
   --c-paper: #f2f0eb;        /* texto principal (blanco roto) */
   --c-grey: #8a8a8a;         /* texto secundario */
   --c-line: rgb(242 240 235 / 0.85); /* borde fino de filas */
