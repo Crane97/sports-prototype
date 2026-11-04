@@ -34,9 +34,10 @@
   content: '';
   position: absolute;
   inset: 0;
+  /* Lateral izquierdo más oscuro: el titular siempre se lee sobre la foto */
   background:
-    linear-gradient(180deg, rgb(11 11 11 / 0.55) 0%, rgb(11 11 11 / 0.25) 35%, rgb(11 11 11 / 0.92) 100%),
-    radial-gradient(ellipse at 30% 60%, transparent 30%, rgb(0 0 0 / 0.6) 100%);
+    linear-gradient(90deg, rgb(11 11 11 / 0.82) 0%, rgb(11 11 11 / 0.55) 40%, rgb(11 11 11 / 0) 75%),
+    linear-gradient(180deg, rgb(11 11 11 / 0.55) 0%, rgb(11 11 11 / 0.2) 35%, rgb(11 11 11 / 0.92) 100%);
 }
 
 /* Textura de papel gastado sobre la foto */
@@ -157,5 +158,12 @@
 
   .hero__est {
     display: block;
+  }
+}
+
+/* Móvil: el texto ocupa todo el ancho, así que el velo es uniforme */
+@media (max-width: 63.99em) {
+  .hero__bg::after {
+    background: linear-gradient(180deg, rgb(11 11 11 / 0.6) 0%, rgb(11 11 11 / 0.7) 45%, rgb(11 11 11 / 0.94) 100%);
   }
 }

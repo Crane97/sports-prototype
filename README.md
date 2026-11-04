@@ -72,6 +72,10 @@ Deja los archivos en **`public/images/`** con el nombre exacto que indica el con
 | `instalacion-*.webp` (3) | 1400×1000 |
 | `cta-ring.webp` | 1920×1080 |
 
+Ahora mismo hay **fotos provisionales** (Unsplash + fotos aportadas): origen y avisos en [`docs/creditos-imagenes.md`](docs/creditos-imagenes.md). Sustitúyelas por fotos propias con el mismo nombre.
+
+Opcional: si añades `<nombre>-sm.webp` (960 px de ancho), la web la sirve automáticamente en móvil (`srcset`). Ya se hace con `hero` y `cta-ring`.
+
 Consejos: exporta en **WebP calidad 75–80**; el hero no debería pasar de ~250 KB y el resto de ~150 KB. Herramienta gratuita: [squoosh.app](https://squoosh.app).
 Para la imagen al compartir en redes, sustituye `public/og-image.jpg` (1200×630).
 

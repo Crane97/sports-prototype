@@ -84,7 +84,7 @@ export const site = {
       'Técnica, condición física y disciplina para todos los niveles. Desde tu primer saco hasta tu primer asalto.',
     primaryCta: { label: 'Clase de prueba gratis' }, // abre WhatsApp
     secondaryCta: { label: 'Ver horarios', href: '#horarios' },
-    image: { file: 'hero.webp', width: 1920, height: 1280, alt: 'Boxeador entrenando con el saco en la penumbra del gimnasio' },
+    image: { file: 'hero.webp', width: 1920, height: 1280, alt: 'Boxeador lanzando un golpe en blanco y negro bajo los focos' },
   },
 
   /* --------------------------------------------------------------------------
@@ -123,14 +123,14 @@ export const site = {
    *  - Mezcla fotos verticales (800×1000) y horizontales (1200×800).
    * ------------------------------------------------------------------------ */
   gallery: [
-    { file: 'galeria-ring.webp', width: 1200, height: 800, caption: 'El ring', alt: 'Ring de boxeo con cuerdas rojas iluminado en el centro del gimnasio' },
-    { file: 'galeria-vendaje.webp', width: 800, height: 1000, caption: 'Antes de empezar', alt: 'Manos colocándose el vendaje de boxeo' },
-    { file: 'galeria-sacos.webp', width: 1200, height: 800, caption: 'Zona de sacos', alt: 'Fila de sacos de boxeo colgados' },
-    { file: 'galeria-manoplas.webp', width: 800, height: 1000, caption: 'Trabajo de manoplas', alt: 'Entrenador sujetando manoplas mientras un alumno golpea' },
-    { file: 'galeria-clase.webp', width: 1200, height: 800, caption: 'Clase dirigida', alt: 'Grupo de alumnos haciendo sombra durante una clase dirigida' },
-    { file: 'galeria-infantil.webp', width: 800, height: 1000, caption: 'Los más pequeños', alt: 'Niño con guantes de boxeo atendiendo a su entrenador' },
-    { file: 'galeria-guantes.webp', width: 1200, height: 800, caption: 'Material', alt: 'Guantes de boxeo colgados en la pared del gimnasio' },
-    { file: 'galeria-sparring.webp', width: 800, height: 1000, caption: 'Sparring', alt: 'Dos boxeadores con casco haciendo sparring en el ring' },
+    { file: 'galeria-ring.webp', width: 1200, height: 800, caption: 'Noche de velada', alt: 'Ring de boxeo iluminado en el centro de un pabellón lleno de público' },
+    { file: 'galeria-vendaje.webp', width: 800, height: 1000, caption: 'Preparación física', alt: 'Manos vendadas subiendo por una cuerda en blanco y negro' },
+    { file: 'galeria-sacos.webp', width: 800, height: 1000, caption: 'Zona de sacos', alt: 'Fila de sacos de boxeo colgados de vigas metálicas junto a una pared de ladrillo' },
+    { file: 'galeria-manoplas.webp', width: 800, height: 1000, caption: 'Concentración', alt: 'Boxeadora concentrada frente al saco en un gimnasio en penumbra' },
+    { file: 'galeria-clase.webp', width: 1200, height: 800, caption: 'Trabajo de saco', alt: 'Deportista golpeando el saco con la pierna en un gimnasio oscuro' },
+    { file: 'galeria-infantil.webp', width: 800, height: 1000, caption: 'Disciplina', alt: 'Boxeador en guardia con guantes blancos bajo luz roja y azul' },
+    { file: 'galeria-guantes.webp', width: 1200, height: 800, caption: 'Material', alt: 'Guantes de boxeo negros sobre la lona' },
+    { file: 'galeria-sparring.webp', width: 800, height: 1000, caption: 'Sparring', alt: 'Boxeador amateur con casco rojo lanzando un golpe durante un combate' },
   ],
 
   /* --------------------------------------------------------------------------
@@ -143,28 +143,28 @@ export const site = {
       icon: 'glove',
       meta: 'Todos los niveles · 60 min',
       text: 'Técnica, combinaciones, saco y trabajo físico guiados por un entrenador. La forma más completa de aprender a boxear.',
-      image: { file: 'clase-dirigida.webp', width: 900, height: 1125, alt: 'Clase dirigida de boxeo con alumnos golpeando sacos' },
+      image: { file: 'clase-dirigida.webp', width: 900, height: 1125, alt: 'Alumnas sonrientes con guantes durante una clase dirigida de boxeo' },
     },
     {
       title: 'Clase libre',
       icon: 'bag',
       meta: 'Socios · 60 min',
       text: 'Usa el ring, los sacos y el material a tu ritmo, con un entrenador en sala para corregirte cuando lo necesites.',
-      image: { file: 'clase-libre.webp', width: 900, height: 1125, alt: 'Boxeador entrenando en solitario con el saco' },
+      image: { file: 'clase-libre.webp', width: 900, height: 1125, alt: 'Boxeador entrenando en solitario frente al saco' },
     },
     {
       title: 'Boxeo infantil',
       icon: 'kids',
       meta: 'De 6 a 14 años · L · X · V',
       text: 'Coordinación, confianza y respeto a través del boxeo. Sin contacto, en grupos reducidos y con monitores especializados.',
-      image: { file: 'clase-infantil.webp', width: 900, height: 1125, alt: 'Niños con guantes de boxeo durante una clase infantil' },
+      image: { file: 'clase-infantil.webp', width: 900, height: 1125, alt: 'Niños con guantes de boxeo atendiendo a su entrenador durante una clase infantil' },
     },
     {
       title: 'Entrenamiento personal',
       icon: 'person',
       meta: 'Individual o en pareja · Con cita',
       text: 'Un plan a tu medida: preparación para competir, pérdida de peso o técnica desde cero, uno a uno con tu entrenador.',
-      image: { file: 'clase-personal.webp', width: 900, height: 1125, alt: 'Entrenador personal trabajando con manoplas con un alumno' },
+      image: { file: 'clase-personal.webp', width: 900, height: 1125, alt: 'Entrenador con manoplas trabajando golpes con un alumno' },
     },
   ],
 
@@ -210,19 +210,19 @@ export const site = {
       title: 'Ring profesional',
       text: 'Ring de competición de 5 × 5 metros para técnica, trabajo de pies y sparring controlado.',
       features: ['Lona antideslizante', 'Iluminación de competición'], // [PROVISIONAL]
-      image: { file: 'instalacion-ring.webp', width: 1400, height: 1000, alt: 'Ring de boxeo profesional del club con las cuerdas rojas' },
+      image: { file: 'instalacion-ring.webp', width: 1400, height: 1000, alt: 'Guantes de boxeo negros sobre la lona junto a las cuerdas del ring' },
     },
     {
       title: 'Zona de sacos',
-      text: 'Sacos pesados, de suelo y de doble anclaje para trabajar potencia, velocidad y precisión.',
+      text: 'Sacos pesados, peras de velocidad y de doble anclaje para trabajar potencia, ritmo y precisión.',
       features: ['12 sacos', 'Peras y sacos de reflejos'], // [PROVISIONAL]
-      image: { file: 'instalacion-sacos.webp', width: 1400, height: 1000, alt: 'Hilera de sacos de boxeo colgados en el gimnasio' },
+      image: { file: 'instalacion-sacos.webp', width: 1400, height: 1000, alt: 'Sala con peras de velocidad colgadas, espejo de pared y ventanales' },
     },
     {
       title: 'Preparación física y vestuarios',
       text: 'Área funcional para fuerza y acondicionamiento, y vestuarios con duchas y taquillas.',
       features: ['Comba, balones y kettlebells', 'Duchas y taquillas'], // [PROVISIONAL]
-      image: { file: 'instalacion-fisico.webp', width: 1400, height: 1000, alt: 'Zona de preparación física con material de entrenamiento funcional' },
+      image: { file: 'instalacion-fisico.webp', width: 1400, height: 1000, alt: 'Nave diáfana con bancos, racks y material de preparación física' },
     },
   ],
 
@@ -247,7 +247,7 @@ export const site = {
     title: 'Sube al ring',
     text: 'Reserva tu clase de prueba por WhatsApp. Trae ropa cómoda; los guantes los ponemos nosotros.',
     button: 'Reservar mi clase gratis',
-    image: { file: 'cta-ring.webp', width: 1920, height: 1080, alt: 'Ring de boxeo en penumbra iluminado por un foco' },
+    image: { file: 'cta-ring.webp', width: 1920, height: 1080, alt: 'Boxeador caminando hacia el ring entre el público y los focos' },
   },
 
   /* --------------------------------------------------------------------------

@@ -44,7 +44,14 @@ export function image({ file, width, height, alt, className = '', priority = fal
   }
 
   const loading = priority ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"';
-  return `<img class="media ${className}" src="/images/${esc(file)}" width="${width}" height="${height}"
+
+  // Versión ligera opcional para móvil: si existe "<nombre>-sm.webp" (960 px
+  // de ancho) se ofrece con srcset y el navegador elige la adecuada.
+  const small = file.replace(/\.webp$/, '-sm.webp');
+  const hasSmall = small !== file && fs.existsSync(path.join(IMAGES_DIR, small));
+  const srcset = hasSmall ? `srcset="/images/${esc(small)} 960w, /images/${esc(file)} ${width}w"` : '';
+
+  return `<img class="media ${className}" src="/images/${esc(file)}" ${srcset} width="${width}" height="${height}"
     alt="${esc(alt)}" ${loading} decoding="async" sizes="${sizes}">`;
 }
 
