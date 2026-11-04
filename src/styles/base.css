@@ -32,6 +32,16 @@ body {
   overflow-x: hidden;
 }
 
+/* Red de seguridad anti-desbordamiento horizontal.
+   En móvil, `overflow-x: hidden` en <body> NO impide que el navegador
+   ensanche la página si algo se sale; `clip` en los bloques principales sí
+   recorta sin crear un contenedor de scroll (no rompe position: sticky). */
+body > main,
+body > footer {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
 body.is-locked {
   overflow: hidden;
 }

@@ -77,6 +77,17 @@
   font-size: 1.4rem;
 }
 
+/* Móvil: el botón grande puede partir línea en vez de salirse de la pantalla */
+@media (max-width: 30em) {
+  .btn--lg {
+    width: 100%;
+    padding-inline: var(--sp-5);
+    font-size: 1.25rem;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
 .final-cta .btn .icon {
   transform: none;
 }
