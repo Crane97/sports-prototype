@@ -31,7 +31,7 @@ export function renderGallery(site) {
     </button>
   </div>
 
-  <div class="marquee" data-marquee style="--count:${gallery.length}">
+  <div class="marquee" data-marquee tabindex="0" role="region" aria-label="Galería de fotos del club (desliza para ver más)">
     <div class="marquee__track">
       <div class="marquee__group">${items}</div>
       <div class="marquee__group" aria-hidden="true" inert>${items}</div>

@@ -53,35 +53,38 @@
   border-block: 6px solid transparent;
 }
 
-/* --- Pista --- */
+/* --- Pista ---
+   La galería es una fila con scroll horizontal real: se puede deslizar con el
+   dedo, trackpad o teclado. js/ui/marquee.js la hace avanzar sola en bucle
+   infinito (la segunda copia de las fotos permite el salto invisible). */
 .marquee {
   --gap: clamp(1rem, 0.5rem + 1.5vw, 1.75rem);
   --h: clamp(15rem, 10rem + 18vw, 26rem); /* alto de las fotos */
-  --speed: calc(var(--count) * 7s);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.marquee::-webkit-scrollbar {
+  display: none;
+}
+
+.marquee.is-dragging {
+  cursor: grabbing;
+  user-select: none;
 }
 
 .marquee__track {
   display: flex;
   width: max-content;
-  animation: marquee var(--speed) linear infinite;
-}
-
-.marquee:hover .marquee__track,
-.marquee:focus-within .marquee__track,
-.marquee.is-paused .marquee__track {
-  animation-play-state: paused;
 }
 
 .marquee__group {
   display: flex;
   gap: var(--gap);
   padding-right: var(--gap);
-}
-
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 /* --- Cada foto --- */
@@ -105,6 +108,8 @@
 
 .marquee__frame .media {
   height: 100%;
+  -webkit-user-drag: none;
+  user-select: none;
   aspect-ratio: auto !important;
   filter: grayscale(0.35) contrast(1.05);
   transition:
@@ -136,17 +141,11 @@
   color: var(--c-grey);
 }
 
-/* --- Movimiento reducido: fila desplazable a mano, sin copia --- */
+/* --- Movimiento reducido: sin avance automático (lo decide el JS), sin copia --- */
 @media (prefers-reduced-motion: reduce) {
   .marquee {
-    overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-inline: var(--gutter);
-    scrollbar-width: thin;
-  }
-
-  .marquee__track {
-    animation: none;
   }
 
   .marquee__group[aria-hidden='true'],

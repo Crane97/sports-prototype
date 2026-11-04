@@ -149,6 +149,17 @@
   transition: opacity var(--dur) var(--ease-out);
 }
 
+/* IMPORTANTE: `display:flex` anula el atributo `hidden` del HTML. Sin esta
+   regla, el menú queda invisible (opacity 0) pero ENCIMA de toda la página y
+   se "come" los toques en móvil. Cerrado = fuera del flujo y sin eventos. */
+.mobile-menu[hidden] {
+  display: none;
+}
+
+.mobile-menu:not(.is-open) {
+  pointer-events: none;
+}
+
 .mobile-menu.is-open {
   opacity: 1;
 }
