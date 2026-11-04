@@ -148,6 +148,9 @@
 }
 
 .map__note a {
+  display: inline-block; /* no se parte en dos líneas: toda la zona es tocable */
+  padding-block: var(--sp-1);
+  white-space: nowrap;
   color: var(--c-paper);
   text-decoration: underline;
   text-underline-offset: 2px;
